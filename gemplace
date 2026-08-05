@@ -1,0 +1,34 @@
+@app.route("/add_one_country", methods=["GET","POST"])
+def add_one_country():
+
+    if request.method == 'POST':
+
+        the_username = "anonyme"
+        hey=dict(request.form)
+
+
+        touslesuser= query_db("select * from user")
+
+        touslespost= query_db("select * from post")
+
+        touslesjob= query_db("select * from job")
+
+        touslesgemplace= query_db("select * from gemplace")
+
+        one_user = query_db("insert into country (name) values (:name)",hey)
+        user = query_db('select * from country')
+
+        return render_template("countryform.html", countrys=user, one_user=one_user, the_title="add new country", touslesuser=touslesuser, touslespost=touslespost, touslesjob=touslesjob, touslesgemplace=touslesgemplace)
+
+
+    touslesuser= query_db("select * from user")
+
+    touslespost= query_db("select * from post")
+
+    touslesjob= query_db("select * from job")
+
+    touslesgemplace= query_db("select * from gemplace")
+
+    user = query_db('select * from country')
+    one_user = query_db("select * from country limit 1", one=True)
+    return render_template("countryform.html", countrys=user, one_user=one_user, the_title="add new country", touslesuser=touslesuser, touslespost=touslespost, touslesjob=touslesjob, touslesgemplace=touslesgemplace)
