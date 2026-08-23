@@ -1,5 +1,7 @@
 # call-upon-crystal-ball
 daily life
+![alt text](crystal1.png)
+
 ✨ Un Voyageur Numérique — A Repository of Meaningful Movement
 
 This GitHub project traces the journey of a tech-savvy traveler whose essence lies not in motion alone, but in the quiet observation of space, syntax, and soul.
